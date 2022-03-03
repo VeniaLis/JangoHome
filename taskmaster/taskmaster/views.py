@@ -5,4 +5,4 @@ def about(request):
     return HttpResponse('Эта страница')
 
 def home(request):
-    return render(request, 'home.html', {'greeting': 'Привет '})
+    return render(request, 'home.html', {'greeting': 'Hello my sweet home !!! '})
