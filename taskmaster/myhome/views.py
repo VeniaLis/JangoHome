@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from .models import Book
+from .models import Book,Review
 
 
 def home(request):
