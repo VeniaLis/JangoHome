@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from .models import Book, Review
+from .models import Book,Review
 
 
 def home(request):
@@ -15,3 +15,16 @@ def book_detail(request, book_id):
 def review_detail(request, review_id):
     review = Review.objects.get(id=review_id)
     return render(request, 'review_detail.html', {'review': review})
+
+
+def book_list(request):
+    book = Book.objects.all
+    return render(request, 'book_list.html',{'books': book})
+
+def review_list(request):
+    review = Review.objects.all
+    return render(request, 'review_list.html',{'review': review})
+
+def book_review_list(request,book_id):
+    review = Review.objects.filter(book= book_id)
+    return render(request, 'book_review_list.html', {'review': review})
