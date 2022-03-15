@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends 'base.html'%}
+{%block content%}
+{% for book in book %}
+    <h1>Book name: {{book.name}}</h1>
+    <h2>Book id: {{book.id}}</h2>
+    <h2>Review: {{review.text}}</h2>
+{% endfor %}
+{% endblock %}
